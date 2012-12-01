@@ -1,0 +1,4 @@
+dragDropControl
+===============
+
+Encapsulates drag events
