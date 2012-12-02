@@ -2,9 +2,9 @@
 "use strict";
 var initializeModule = function () {
 	var healthCheck = function (date) {
-		$('.moduleContainer').text(date);
+		$('.dragDropControlContainer').text(date);
 	};
 	$(function () {
-		window.module.heartbeat(healthCheck);
+		window.dragDropControl.heartbeat(healthCheck);
 	});
 };

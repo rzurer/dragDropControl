@@ -3,8 +3,8 @@
 "use strict";
 	var initialize = function () {
 		var common = require('../common/modules/common').common(),
-			module = require('./modules/module').module(common);
-			window.module = module;
+			dragDropControl = require('./modules/dragDropControl').dragDropControl(common);
+			window.dragDropControl = dragDropControl;
 	};
 initialize();
 

@@ -2,4 +2,4 @@ Drag Drop Control
 
 ===============
 
-Encapsulates crag drop functionality
+Encapsulates drag drop functionality

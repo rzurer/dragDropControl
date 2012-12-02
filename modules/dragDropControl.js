@@ -1,5 +1,5 @@
 "use strict";
-exports.module = function (common) {
+exports.dragDropControl = function (common) {
 	var that = {
 			heartbeat : function (callback) {
 				if (callback) {
