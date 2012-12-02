@@ -1,4 +1,5 @@
-dragDropControl
+Drag Drop Control
+
 ===============
 
-Encapsulates drag events
+Encapsulates crag drop functionality
