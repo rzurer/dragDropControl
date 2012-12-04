@@ -1,5 +1,8 @@
-.dragDropControlContainer{
-	color : red;
-	font-size: 16px;
-	font-family: Muli;
-}
+.hover {
+  border: 2px solid red !important;}
+.dragDropControlContainer {
+  width: 304px;
+  height: 304px;
+  border: gainsboro 4px dashed;
+  cursor: pointer;
+  float: left;}
