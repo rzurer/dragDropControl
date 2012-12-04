@@ -1,6 +1,7 @@
 .hover {
   border: 2px solid red !important;}
 .dragDropControlContainer {
+  margin-left: 2px;
   width: 304px;
   height: 304px;
   border: gainsboro 4px dashed;

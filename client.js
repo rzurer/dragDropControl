@@ -2,8 +2,8 @@
 /*global  window, localStorage, $*/
 "use strict";
 	var initialize = function () {
-		var common = require('../common/modules/common').common(),
-			dragDropControl = require('./modules/dragDropControl').dragDropControl(common);
+		var eventListener = require('../common/modules/eventListener').eventListener(),
+			dragDropControl = require('./modules/dragDropControl').dragDropControl(eventListener);
 			window.dragDropControl = dragDropControl;
 	};
 initialize();

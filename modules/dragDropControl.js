@@ -1,5 +1,5 @@
 "use strict";
-exports.dragDropControl = function (common, eventListener) {
+exports.dragDropControl = function (eventListener) {
 	var dropZone,
 		stopPropagation = function (e) {
 			if (e.stopPropagation) {
@@ -32,33 +32,20 @@ exports.dragDropControl = function (common, eventListener) {
 			initEvent(event);
 			dropZone.removeClass('hover');
 		},
-		//getTargetImg = function (event) {
-		//	return event.target.tagName.toLowerCase() !== 'img' ? event.target.firstChild : event.target;
-		//},
-		getRemoteSrc = function (event) {
-			var src;
-			src = event.dataTransfer.getData("text/x-moz-url");
-			if (!src || src === 'undefined') {
-				src = event.dataTransfer.getData("URL");
-			}
-			return src;
-		},
-		doDrop = function (event, imageSrcCallback) {
-			var files, src;
+		doDrop = function (event) {
+			var files, url;
 			initEvent(event);
-			//img =  getTargetImg(event);
-			//img.width = 0;
 			files = event.dataTransfer.files;
 			if (files.length > 0) {
-				//uploadLocalFileAndThumbnail(img, files, imageSrcCallback);
+				eventListener.fire('fileDropped', [files]);
 				dropZone.removeClass('hover');
 				return;
 			}
-			src = getRemoteSrc(event);
-			//saveThumbnail(img, src, null,  function () {
-			//	dropZone.removeClass('hover');
-			//	imageSrcCallback(img);
-			//});
+			url = event.dataTransfer.getData("text/x-moz-url");
+			if (!url || url === 'undefined') {
+				url = event.dataTransfer.getData("URL");
+			}
+			eventListener.fire('urlDropped', [url]);
 			dropZone.removeClass('hover');
 		},
 		initializeEvents = function (dropZone) {
@@ -75,14 +62,32 @@ exports.dragDropControl = function (common, eventListener) {
 				if (!control || !control.addClass) {
 					throw "Drop zone must be a jQueryObject";
 				}
-				console.log(control.get(0));
 				dropZone = control;
 				initializeEvents(control.get(0));
+			},
+			addListener : function (type, listener) {
+				eventListener.addListener(type, listener);
+			},
+			removeListener : function (type, listener) {
+				eventListener.removeListener(type, listener);
 			}
-
 		};
 	return that;
 };
 
 
 
+/*
+//uploadLocalFileAndThumbnail(img, files, imageSrcCallback);
+/img =  getTargetImg(event);
+//img.width = 0;
+src = getRemoteSrc(event);
+console.log("src ", src);
+//saveThumbnail(img, src, null,  function () {
+//	dropZone.removeClass('hover');
+//	imageSrcCallback(img);
+//});
+		// getTargetImg = function (event) {
+		// 	return event.target.tagName.toLowerCase() !== 'img' ? event.target.firstChild : event.target;
+		// },
+,*/
