@@ -74,20 +74,3 @@ exports.dragDropControl = function (eventListener) {
 		};
 	return that;
 };
-
-
-
-/*
-//uploadLocalFileAndThumbnail(img, files, imageSrcCallback);
-/img =  getTargetImg(event);
-//img.width = 0;
-src = getRemoteSrc(event);
-console.log("src ", src);
-//saveThumbnail(img, src, null,  function () {
-//	dropZone.removeClass('hover');
-//	imageSrcCallback(img);
-//});
-		// getTargetImg = function (event) {
-		// 	return event.target.tagName.toLowerCase() !== 'img' ? event.target.firstChild : event.target;
-		// },
-,*/
