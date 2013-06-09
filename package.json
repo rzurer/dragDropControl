@@ -1,0 +1,17 @@
+{
+  "name": "dragDropControl",
+  "description": "A simple drag drop control",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "3.x",
+    "jade": "0.28.x",
+    "browserify-middleware": "1.5.x"
+  },
+  "subdomain": "bzurer-dragDropControl",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}
